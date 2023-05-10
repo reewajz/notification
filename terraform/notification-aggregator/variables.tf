@@ -1,0 +1,3 @@
+variable "owner" {}
+
+variable "stack" {}

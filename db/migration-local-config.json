@@ -1,0 +1,17 @@
+{
+  "connection": {
+    "database": "tests",
+    "host": "localhost",
+    "user": "tests"
+  },
+  "schemas": [
+    {
+      "schema": "notification",
+      "folder": "db/migrations"
+    },
+    {
+      "schema": "tenant",
+      "folder": "db/local_migrations"
+    }
+  ]
+}

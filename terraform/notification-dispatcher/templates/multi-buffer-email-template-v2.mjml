@@ -1,0 +1,254 @@
+<mjml>
+  <mj-head>
+    <mj-attributes>
+      /* background colors*/
+      <mj-class name="primary-pink" background-color="#FF3399" />
+      <mj-class name="light-grey" background-color="#F0F3FF" />
+
+      /* text colors */
+      <mj-class name="primary-color" color="#FF3399" />
+      <mj-class name="title-color" color="#1D0058" />
+      <mj-class name="body-text-color" color="#484F72" />
+      <mj-class name="footer-text-color" color="#627588" />
+      <mj-class name="anchor-color" color="405DFF" />
+
+      /* font styles*/
+      <mj-class name="h-1" font-size="24px" line-height="32px" font-weight="400" letter-spacing="-0.35px" />
+      <mj-class name="h-2" font-size="16px" line-height="22px" font-weight="noraml" />
+      <mj-class name="p-1" font-size="14px" line-height="21px" font-weight="normal" />
+      <mj-class name="p-2" font-size="12px" line-height="12px" font-weight="normal" />
+
+      /* MJML attributes */
+      <mj-text font-family="Helvetica" padding="0" />
+      <mj-button background-color="#FF3399" color="#FFFFFF" font-size="14px" line-height="14px" font-weight="600" border-radius="4px" inner-padding="10px 24px" padding="0">
+        <mj-image padding="0" />
+        <mj-section padding="0" />
+    </mj-attributes>
+
+     /* Styles used for outlook desktop app  */
+    <mj-style inline="inline">
+
+      .message-wrapper > table > tbody > tr > td {
+      	padding: 36px !important;
+      }
+      
+      .submit-button > table  {
+      	height: 40px !important;
+      } 
+      
+      .links > table > tbody > tr > td{
+      padding: 18px 0 36px 0 !important;
+      }
+
+
+    </mj-style>
+
+    <mj-style>
+      a {
+      text-decoration-color: #405DFF;
+      }
+
+      .social-group {
+      display: flex !important;
+      }
+
+      .body-heading-text div {
+      font-size: 24px !important;
+      line-height: 32px !important;
+      font-weight: 400 !important;
+      letter-spacing: -0.35px !important;
+      }
+
+      .body-text div {
+      font-size: 14px !important;
+      line-height: 21px !important;
+      font-weight: 400 !important;
+      }
+
+      .social {
+      float: left !important;
+      margin-right: 58px !important;
+      padding: 16px 0 36px 0px !important;
+      }
+
+      .icon-mr {
+      margin-right: 24px !important;
+      }
+
+      .links {
+      display: flex !important;
+      }
+
+      .link{
+      width: auto !important;
+      }
+
+      .link-font span {
+      font-size: 12px !important;
+      }
+
+      .link-mr {
+      margin-right: 24px !important;
+      display: inline-table !important;
+      margin-bottom: 12px;
+      }
+
+      .footer-text {
+      padding: 20px 0 !important;
+      }
+
+      @media (max-width: 695px) {
+      
+      .message-wrapper > table > tbody > tr > td {
+      	padding: 20px !important;
+      }
+
+      .h-1 div {
+      font-size:20px !important;
+      }
+
+      .body-heading-text div {
+      font-size: 20px !important;
+      line-height: 24px !important;
+      }
+
+      .body-text div {
+      font-size: 16px !important;
+      }
+
+      .footer-text {
+      padding: 20px 0 16px 0px !important;
+      }
+
+      .social {
+      float: inherit !important;
+      padding: 0px 0px 24px 0px !important;
+      }
+
+      .links > table > tbody > tr > td{
+      padding: 0px !important;
+      }
+
+      .icon {
+      width: auto !important
+      }
+
+      .link {
+      margin: 0 12px 12px 0 !important;
+      display: inline-table !important
+      }
+
+      .icon-mr {
+      margin-right: 48px !important;
+      }
+
+      .link-font span {
+      font-size: 14px !important;
+      }
+
+      }
+
+    </mj-style>
+  </mj-head>
+  <mj-body background-color="#F0F3FF" width="644px">
+    <mj-wrapper css-class="full-width" padding="0 10px" background-color="#F0F3FF">
+      <mj-section padding="36px 0 36px">
+        <mj-column>
+          <mj-image width="172px" src="https://cdn.itonics.io/13.0.4913/img/Logo-light-background-RGB.png" padding="0" align="left" css-class="header-logo" />
+          <mj-raw>
+            <!--{{#if options.showNotificationCountHeader }}-->
+          </mj-raw>
+          <mj-text mj-class="h-2 title-color" padding="36px 0 0" css-class="header-notification">
+            You have <span style="font-weight: bold">{{ options.messagesCount }}</span> new Notifications
+          </mj-text>
+          <mj-raw>
+            <!--{{/if}}-->
+          </mj-raw>
+        </mj-column>
+      </mj-section>
+
+      <mj-raw>
+        <!--{{#each messages}}-->
+      </mj-raw>
+      <mj-section background-color="#FFFFFF" css-class="message-wrapper">
+        <mj-column>
+          <mj-text mj-class="title-color" css-class="body-heading-text">
+            {{ bodyHeading }}
+          </mj-text>
+          <mj-raw>
+            <!--{{#if bodyText }}-->
+          </mj-raw>
+          <mj-text mj-class="body-text-color" css-class="body-text" padding-top="12px">
+            {{{ bodyText }}}
+          </mj-text>
+          <mj-raw>
+            <!--{{/if}}-->
+          </mj-raw>
+
+          <mj-raw>
+            <!--{{#each ctaButtons}}-->
+          </mj-raw>
+          <mj-button font-family="Helvetica" css-class="submit-button" href='{{action}}' target='_blank' align="left" padding-top="24px">
+            {{text}}
+          </mj-button>
+          <mj-raw>
+            <!--{{/each}}-->
+          </mj-raw>
+        </mj-column>
+      </mj-section>
+
+      <mj-section padding="0" background-color="#F0F3FF">
+        <mj-column padding="16px 0px 0px 0px">
+          &nbsp;
+        </mj-column>
+      </mj-section>
+
+      <mj-raw>
+        <!--{{/each}}-->
+      </mj-raw>
+
+      <mj-section padding="0">
+        <mj-column>
+          <mj-text mj-class="p-1 footer-text-color" css-class="footer-text">You have received this notification because you use ITONICS - the #1 Innovation OS to empower everybody to innovate!</mj-text>
+        </mj-column>
+      </mj-section>
+
+      <mj-section padding="0" css-class="social">
+        <mj-group css-class="social-group">
+          <mj-column css-class="icon icon-mr">
+            <mj-image height="16px" width="16px" padding="0" src="https://cdn.itonics.io/13.0.4913/img/facebook.png" href="https://www.facebook.com/itonicsinnovation/" />
+          </mj-column>
+          <mj-column css-class="icon icon-mr">
+            <mj-image height="16px" width="16px" padding="0" src="https://cdn.itonics.io/13.0.4913/img/instagram.png" href="https://instagram.com/itonicsinnovation" />
+          </mj-column>
+          <mj-column css-class="icon">
+            <mj-image height="16px" width="16px" padding="0" src="https://cdn.itonics.io/13.0.4913/img/linked-in.png" href="https://de.linkedin.com/company/itonics-gmbh" />
+          </mj-column>
+        </mj-group>
+      </mj-section>
+
+      <mj-section padding="0" text-align="left" css-class="links">
+        <mj-column css-class="link link-mr">
+          <mj-text mj-class="anchor-color" css-class="link-font" padding="0"><a href="itonics-innovation.com"><span style="padding: 0; margin: 0; font-style: normal; font-weight: 400;line-height: 12px; white-space: nowrap;color: #405DFF">itonics-innovation.com</a></mj-text>
+        </mj-column>
+        <mj-column css-class="link link-mr">
+          <mj-text mj-class="anchor-color" css-class="link-font" padding="0"><a href="https://www.itonics-innovation.com/privacy-policies"><span style="padding: 0; margin: 0; font-style: normal; font-weight: 400;line-height: 12px; white-space: nowrap; color: #405DFF">Privacy Policy</span></a></mj-text>
+        </mj-column>
+        <mj-column css-class="link link-mr">
+          <mj-text mj-class="anchor-color" css-class="link-font" padding="0"><a href="https://www.itonics-innovation.com/campus-terms-and-conditions"><span style="padding: 0; margin: 0; font-style: normal; font-weight: 400; line-height: 12px;white-space: nowrap; color: #405DFF">Terms of Service</span></a></mj-text>
+        </mj-column>
+
+        <mj-raw>
+          <!--{{#if options.userProfileUrl }}-->
+        </mj-raw>
+        <mj-column css-class="link">
+          <mj-text mj-class="anchor-color" css-class="link-font" padding="0"><a href={{options.userProfileUrl}}><span style="padding: 0; margin: 0; font-style: normal; font-weight: 400; line-height: 12px; white-space: nowrap;color: #405DFF">Manage Notifications</span></a></mj-text>
+        </mj-column>
+        <mj-raw>
+          <!--{{/if}}-->
+        </mj-raw>
+      </mj-section>
+
+    </mj-wrapper>
+  </mj-body>
+</mjml>
