@@ -10,7 +10,7 @@ module "notification_api_lambda" {
   datadog_lambda_arn  = data.terraform_remote_state.account.outputs.datadog_lambda_arn
 
   environment_variables = {
-    CORE_DB_CLIENT_SECRET = "core_db_client"
+    CORE_DB_CLIENT_SECRET = "test"
   }
 
   subnet_ids = data.terraform_remote_state.account.outputs.global_subnet_ids

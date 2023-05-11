@@ -8,7 +8,7 @@ module "notification_converter_lambda" {
   datadog_lambda_arn  = data.terraform_remote_state.account.outputs.datadog_lambda_arn
 
   environment_variables = {
-    CORE_DB_CLIENT_SECRET = "core_db_client",
+    CORE_DB_CLIENT_SECRET = "test",
     AUDIT_BUCKET_NAME     = "audit-v2-${terraform.workspace}"
   }
 

@@ -16,7 +16,7 @@ module "notification_dispatcher_lambda" {
   environment_variables = {
     SES_REGION            = "eu-central-1"
     SES_DOMAIN            = data.terraform_remote_state.account.outputs.frontend_domain
-    CORE_DB_CLIENT_SECRET = "core_db_client",
+    CORE_DB_CLIENT_SECRET = "test",
   }
 
   security_group_ids = [

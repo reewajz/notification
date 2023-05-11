@@ -11,7 +11,7 @@ module "notification_aggregator_lambda" {
   timeout     = 30
 
   environment_variables = {
-    CORE_DB_CLIENT_SECRET  = "core_db_client",
+    CORE_DB_CLIENT_SECRET  = "test",
     NOTIFICATION_QUEUE_URL = aws_sqs_queue.notification_aggregator_queue.id
   }
 
